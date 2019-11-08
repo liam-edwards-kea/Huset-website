@@ -1,0 +1,103 @@
+:root {
+    --background-color: #DFF2FD;
+    --secondary-color: #DFF2FD;
+    --main-font: 'Avenir Next';
+    --main-font-size: 24px;
+    --secondary-font-size: 16px;
+    --margin: 2rem;
+}
+
+body {
+    background-color: #DFF2FD;
+    margin-top: var(--margin);
+}
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+h1 {
+    font-size: var(--main-font-size);
+    font-family: var(--main-font);
+}
+
+h2 {
+    font-size: var(--secondary-font-size);
+    font-weight: 400;
+    font-family: var(--main-font);
+}
+
+p2,
+p3,
+p4 {
+    font-family: var(--main-font);
+}
+
+
+.headerWrapper {
+    width: 100vw;
+    display: grid;
+    grid-row-gap: var(--margin);
+    grid-column-gap: var(--margin);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        '. headerImgs .'
+        '. line .'
+        '. musikWrapper .'
+        '. search .'
+}
+
+.headerImages {
+    grid-area: headerImgs;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.search {
+    grid-area: search;
+    display: flex;
+    justify-content: center;
+}
+
+.eventInfo {
+    grid-area: eventInfo;
+}
+
+.cover {
+    grid-area: coverImg;
+    margin: var(--margin);
+}
+
+article {
+    width: 100vw;
+    display: grid;
+    grid-row-gap: var(--margin);
+    grid-column-gap: var(--margin);
+    grid-template-columns: 1fr 12fr 1fr;
+    grid-template-areas:
+        '. header .'
+        '. coverImg .'
+        '. eventInfo .'
+        'footer footer footer'
+}
+
+.SoMe {
+    margin: 0.5rem;
+}
+
+.musikWrapper {
+    grid-area: musikWrapper;
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    grid-area: line;
+    width: 80vw;
+    border: 2px solid #000;
+}
