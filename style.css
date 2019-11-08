@@ -4,6 +4,7 @@
     --main-font: 'Avenir Next';
     --main-font-size: 24px;
     --secondary-font-size: 16px;
+    --text-color: #000;
     --margin: 2rem;
 }
 
@@ -29,6 +30,7 @@ h2 {
     font-size: var(--secondary-font-size);
     font-weight: 400;
     font-family: var(--main-font);
+    font-weight: 300;
 }
 
 p2,
@@ -100,4 +102,28 @@ article {
     grid-area: line;
     width: 80vw;
     border: 2px solid #000;
+}
+
+.home {
+    list-style: none;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--main-font);
+}
+
+.homeFlex {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--margin);
+    animation: fadein 3s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
