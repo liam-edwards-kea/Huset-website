@@ -1,11 +1,8 @@
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    getSearchData();
-}
-
-function getSearchData() {
     const urlParams = new URLSearchParams(window.location.search);
+    const search = urlParams.get("search");
     const id = urlParams.get("id")
     fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/music?_embed&search=" + search)
         .then(res => res.json())
@@ -13,7 +10,7 @@ function getSearchData() {
 
 
     if (search) {
-        console.log("this is a search result")
+        //console.log("this is a search result")
         getSearchData();
     } else if (id) {
         getSingleBand();
@@ -44,7 +41,7 @@ function getFrontpageData() {
 function getSingleBand() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
-    console.log(id)
+    //console.log(id)
 
 
     fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/music/" + id)
@@ -53,7 +50,7 @@ function getSingleBand() {
 
 
     function showMusic(music) {
-        console.log(music)
+        //console.log(music)
         document.querySelector("article h1").textContent = post.title.rendered
     }
 }
@@ -64,7 +61,7 @@ function handleData(myData) {
 }
 
 function showPost(post) {
-    console.log(post)
+    //console.log(post)
     //Clone it
     const template = document.querySelector(".musicTemplate").content;
     const postCopy = template.cloneNode(true);
@@ -77,8 +74,8 @@ function showPost(post) {
     img.setAttribute("src", imgPath)
     img.setAttribute("alt", "Poster of the movie " + post.title.rendered);
 
-    const a postCopy.querySelector("a");
-    a.href="sub.html?id="+post.id;
+    const a = postCopy.querySelector("a");
+    a.href = "sub.html?id=" + post.id;
 
     const p1 = postCopy.querySelector("p1");
     p1.innerHTML = post.event_date
