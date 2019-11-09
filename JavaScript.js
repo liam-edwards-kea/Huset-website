@@ -26,7 +26,7 @@ function getSearchData() {
 function getSearchData() {
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get("search");
-    //console.log("getData")
+    //console.log("getSearchData")
 
     fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/music?_embed&search=" + search)
         .then(res => res.json())
@@ -34,7 +34,7 @@ function getSearchData() {
 }
 
 function getFrontpageData() {
-    //console.log("getData")
+    //console.log("getFrontpageData")
 
     fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/music?_embed")
         .then(res => res.json())
@@ -75,7 +75,11 @@ function showPost(post) {
     const imgPath = post.poster.guid;
     const img = postCopy.querySelector("img.cover");
     img.setAttribute("src", imgPath)
-    img.setAttribute("alt", "Poster of the movie " + post.title.rendered)
+    img.setAttribute("alt", "Poster of the movie " + post.title.rendered);
+
+    const a postCopy.querySelector("a");
+    a.href="sub.html?id="+post.id;
+
     const p1 = postCopy.querySelector("p1");
     p1.innerHTML = post.event_date
     const p2 = postCopy.querySelector("p2");

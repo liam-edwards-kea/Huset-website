@@ -6,6 +6,7 @@
     --secondary-font-size: 16px;
     --text-color: #000;
     --margin: 2rem;
+    --shadow: 0 10px 20px 0 rgba(0, 0, 0, .4), 0 6px 20px 0 rgba(0, 0, 0, .19);
 }
 
 body {
@@ -24,6 +25,7 @@ footer {
 h1 {
     font-size: var(--main-font-size);
     font-family: var(--main-font);
+    text-align: center;
 }
 
 h2 {
@@ -31,12 +33,16 @@ h2 {
     font-weight: 400;
     font-family: var(--main-font);
     font-weight: 300;
+    text-align: center;
 }
 
+p1,
 p2,
 p3,
 p4 {
     font-family: var(--main-font);
+    text-align: center;
+    font-size: 12px;
 }
 
 
@@ -68,11 +74,16 @@ p4 {
 
 .eventInfo {
     grid-area: eventInfo;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
-.cover {
+.imgFlex {
     grid-area: coverImg;
-    margin: var(--margin);
+    margin: 2rem 2rem -1rem 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 article {
@@ -127,3 +138,46 @@ article {
         opacity: 1;
     }
 }
+
+.home:hover {
+    transform: scale(1.06);
+}
+
+
+/* maybe use this later to make the images clickable .cover:hover {
+    transform: scale(1.06);
+    cursor: pointer; */
+}
+
+/*.eventNestedGrid {
+    text-align: center;
+    display: grid;
+    grid-row-gap: var(--margin);
+    grid-column-gap: var(--margin);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'date price'
+        'opens .'
+}
+
+.date {
+    grid-area: date;
+    display: flex;
+    align-self: center;
+}
+
+.price {
+    grid-area: price;
+    display: flex;
+    align-self: center;
+}
+
+.presale {
+    grid-area: presale;
+}
+
+opens {
+    grid-area: opens;
+    display: flex;
+    align-self: center;
+}*/
