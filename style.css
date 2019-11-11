@@ -64,8 +64,12 @@ li {
     color: var(--text-color);
     font-family: var(--main-font);
     font-size: var(--main-font-size);
+    padding: .5rem;
 }
 
+li:hover {
+    transform: scale(1.06);
+}
 
 .headerWrapper {
     width: 100vw;
