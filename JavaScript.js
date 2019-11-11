@@ -19,8 +19,20 @@ function init() {
 
 function getNavigation() {
     fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/genre?_embed")
-    .then(res => res.json())
-        .then(handleData)
+        .then(res => res.json())
+        .then(data => {
+            //console.log(data)
+            data.forEach(addLink)
+        })
+}
+
+function addLink(oneItem) {
+    console.log(oneItem.name)
+    //document.querySelector("nav").innerHTML += oneItem.name
+    const link = document.createElement("a");
+    link.textContent = oneItem.name;
+    document.querySelector("nav").appendChild(link);
+
 }
 
 function getSearchData() {
@@ -64,7 +76,7 @@ function handleData(myData) {
 }
 
 function showPost(post) {
-       // console.log(post)
+    // console.log(post)
     //Clone it
     const template = document.querySelector(".musicTemplate").content;
     const postCopy = template.cloneNode(true);
@@ -82,12 +94,12 @@ function showPost(post) {
 
     const p1 = postCopy.querySelector("p1");
     p1.innerHTML = post.event_date
-    const p2 = postCopy.querySelector("p2");
-    p2.innerHTML = post.price
-   // const p3 = postCopy.querySelector("p3");
+    // const p2 = postCopy.querySelector("p2");
+    // p2.innerHTML = post.price
+    // const p3 = postCopy.querySelector("p3");
     //p3.innerHTML = post.presale_price
-    const p4 = postCopy.querySelector("p4");
-    p4.innerHTML = post.door_opens
+    //const p4 = postCopy.querySelector("p4");
+    //p4.innerHTML = post.door_opens
     //Append it
     document.querySelector("#music").appendChild(postCopy)
 }
