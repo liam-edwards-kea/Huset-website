@@ -1,6 +1,6 @@
 :root {
     --background-color: #DFF2FD;
-    --secondary-color: #DFF2FD;
+    --secondary-color: #9CD4D8;
     --main-font: 'Avenir Next';
     --main-font-size: 24px;
     --secondary-font-size: 16px;
@@ -72,11 +72,22 @@ p4 {
     justify-content: center;
 }
 
+/*input {
+    border-radius: 16px;
+    background-color: var(--secondary-color);
+}*/
+
+.search1 {
+    border-radius: 16px;
+    margin-left: 5px;
+    font-family: var(--main-font);
+}
+
 .eventInfo {
-    grid-area: eventInfo;
-    display: grid;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-content: center;
+
 }
 
 .imgFlex {
@@ -143,33 +154,31 @@ article {
     transform: scale(1.06);
 }
 
-
-/* maybe use this later to make the images clickable .cover:hover {
+.cover:hover {
     transform: scale(1.06);
-    cursor: pointer; */
+    cursor: pointer;
+    */
 }
 
-/*.eventNestedGrid {
+.eventNestedGrid {
+    grid-area: eventInfo;
     text-align: center;
     display: grid;
     grid-row-gap: var(--margin);
     grid-column-gap: var(--margin);
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-        'date price'
-        'opens .'
+        'date'
+        'price'
+        'opens'
 }
 
 .date {
     grid-area: date;
-    display: flex;
-    align-self: center;
 }
 
 .price {
     grid-area: price;
-    display: flex;
-    align-self: center;
 }
 
 .presale {
@@ -178,6 +187,4 @@ article {
 
 opens {
     grid-area: opens;
-    display: flex;
-    align-self: center;
-}*/
+}
