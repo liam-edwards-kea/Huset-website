@@ -54,9 +54,16 @@ nav {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
+
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    color: var(--text-color);
     font-family: var(--main-font);
     font-size: var(--main-font-size);
-
 }
 
 
@@ -72,6 +79,41 @@ nav {
         '. musikWrapper .'
         '. search .'
         '. nav .'
+}
+
+.menuLines {
+    margin: 0 0 2em 0;
+}
+
+.fancy {
+    line-height: 0.5;
+    text-align: center;
+}
+
+.fancy span {
+    display: inline-block;
+    position: relative;
+}
+
+.fancy span:before,
+.fancy span:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    top: 0;
+    width: 25vw;
+}
+
+.fancy span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.fancy span:after {
+    left: 100%;
+    margin-left: 15px;
 }
 
 .headerImages {
