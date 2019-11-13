@@ -124,9 +124,16 @@ function showgenre(genre) {
     if (genre.count > 0 && genre.parent === 29) {
 
         const modalContent = document.querySelector(".modal-content");
-        modalContent.innerHTML += `<a class="genrename" href = Genre.html?id=${genre.id}><h3>${genre.name}</h3></a>`;
+        modalContent.innerHTML += `<a class="genrename" href = Genre.html?id=${genre.id}><h3>${genre.name}</h3></a>`;}
 
-    }
+        document.querySelector(".eventlistener1").addEventListener("click", seemodal);
+
+        function seemodal(myData) {
+            const genremodal = document.querySelector(".modal-background");
+
+            //...
+            genremodal.classList.remove("hide");
+        }
 
     const genremodal = document.querySelector(".modal-background");
     genremodal.addEventListener("click", () => {
