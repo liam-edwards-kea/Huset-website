@@ -82,6 +82,7 @@ li:hover {
         '. line .'
         '. musikWrapper .'
         '. search .'
+        '. sort_by .'
         '. nav .'
 }
 
@@ -250,4 +251,18 @@ article {
 
 opens {
     grid-area: opens;
+}
+
+.hide {
+    display: none;
+}
+
+.sortFlex {
+    cursor: pointer;
+    grid-area: sort_by;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: row;
 }

@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <div class="modal-background hide">
+        <div class="modal-content"></div>
+    </div>
     <section id="music">
         <div class="headerWrapper">
             <div class="headerImages">
@@ -19,39 +22,37 @@
             </div>
             <hr class="line">
             <div class="musikWrapper">
-                <img class="musikcafeen" src="Musik%20cafeen.png" alt="logo" height="125" width="185"></div>
+                <img class="musikcafeen" src="Musik%20cafeen.png" alt="logo" height="100" width="200"></div>
             <form class="search" action="search.html"><input name="search" type="search">
                 <div class="searchBar"><input class="search1" type="submit" value="search"></div>
             </form>
-            <nav></nav>
-        </div>
-        <div class="eventlistener1">Sort by</div>
-            <template class="musicTemplate">
-                <article class="music_content">
-                    <header>
-                        <h1 class="title">TITLE STUFF</h1>
-                        <h2 class="description"></h2>
-                    </header>
-                    <div class="eventNestedGrid">
-                        <div class="eventInfo">
-                            <b>
-                                <p1 class="date">
-                                </p1>
-                                <!--<p2 class="price"></p2>-->
-                                <!--<p3 class="presale"></p3>MAYBE USE-->
-                                <!--<p4 class="opens"></p4>-->
-                            </b>
-                        </div>
-                    </div>
-                    <div class="imgFlex"><a href="sub.html?id=283" class="sub"><img src="" alt="" class="cover" height="250" width="250"></a></div>
-                    <footer></footer>
-                </article>
-            </template>
-            <div class="modal-background hide">
-                <div class="modal-content"></div>
+            <div class="sortFlex">
+                <div class="eventlistener1">
+                    <h2>Sort by</h2>
+                </div>
             </div>
+        </div>
+        <template class="musicTemplate">
+            <article class="music_content">
+                <header>
+                    <h1 class="title">TITLE STUFF</h1>
+                    <h2 class="description"></h2>
+                </header>
+                <div class="eventNestedGrid">
+                    <div class="eventInfo">
+                        <b>
+                            <p1 class="date">
+                            </p1>
+                            <!--<p2 class="price"></p2>-->
+                            <!--<p3 class="presale"></p3>MAYBE USE-->
+                            <!--<p4 class="opens"></p4>-->
+                        </b>
+                    </div>
+                </div>
+                <div class="imgFlex"><a href="sub.html?id=283" class="sub"><img src="" alt="" class="cover" height="250" width="250"></a></div>
+                <footer></footer>
+            </article>
+        </template>
     </section>
     <script src="JavaScript.js"></script>
-</body>
-
-</html>
+</body></html>

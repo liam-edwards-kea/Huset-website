@@ -135,7 +135,7 @@ function showgenre(genre) {
             genremodal.classList.remove("hide");
         }
 
-    const genremodal = document.querySelector(".modal-background");
+    const genremodal = document.querySelector(".modal-content");
     genremodal.addEventListener("click", () => {
         genremodal.classList.add("hide");
     });
