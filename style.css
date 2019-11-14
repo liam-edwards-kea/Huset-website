@@ -310,12 +310,11 @@ footer {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    padding: none;
-    margin: none;
 }
 
 .footerImgFlex {
     display: flex;
     justify-content: center;
     align-items: baseline;
+    align-items: center;
 }

@@ -66,7 +66,14 @@ function getSingleBand() {
 
     function showMusic(music) {
         //console.log(music)
-        document.querySelector(".subArticle h1").textContent = music.title.rendered
+        document.querySelector(".subArticle h1").textContent = music.title.rendered;
+        document.querySelector(".subArticle h2").innerHTML = music.content.rendered;
+        const imgPath = post.poster.guid;
+        const img = postCopy.querySelector(".subArticle .cover");
+        img.setAttribute("src", imgPath)
+        img.setAttribute("alt", "Poster of the movie " + post.title.rendered);
+
+
     }
 }
 
@@ -124,16 +131,17 @@ function showgenre(genre) {
     if (genre.count > 0 && genre.parent === 29); {
 
         const modalContent = document.querySelector(".modal-content");
-        modalContent.innerHTML += `<a class="genrename" href = Genre.html?id=${genre.id}><h3>${genre.name}</h3></a>`;}
+        modalContent.innerHTML += `<a class="genrename" href = Genre.html?id=${genre.id}><h3>${genre.name}</h3></a>`;
+    }
 
-        document.querySelector(".eventlistener1").addEventListener("click", seemodal);
+    document.querySelector(".eventlistener1").addEventListener("click", seemodal);
 
-        function seemodal(myData) {
-            const genremodal = document.querySelector(".modal-content");
+    function seemodal(myData) {
+        const genremodal = document.querySelector(".modal-content");
 
-            //...
-            genremodal.classList.remove("hide");
-        }
+        //...
+        genremodal.classList.remove("hide");
+    }
 
     const genremodal = document.querySelector(".modal-background");
     genremodal.addEventListener("click", () => {
