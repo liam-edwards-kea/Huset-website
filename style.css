@@ -54,6 +54,8 @@ nav {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
+    font-family: var(--main-font);
+    font-size: var(--main-font-size);
 
 }
 
@@ -81,6 +83,7 @@ li:hover {
         '. headerImgs .'
         '. line .'
         '. musikWrapper .'
+        '. title .'
         '. search .'
         '. sort_by .'
         '. nav .'
@@ -263,6 +266,18 @@ opens {
     display: flex;
     justify-content: center;
     align-content: center;
-    justify-content: space-around;
-    flex-direction: row;
+}
+
+.eventlistener1 {
+    background-color: var(--secondary-color);
+    border-radius: 25px;
+}
+
+.eventlistener1 h2 {
+    padding: 0 10px 0 10px;
+}
+
+.eventsTitle {
+    grid-area: title;
+    text-align: center;
 }

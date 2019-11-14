@@ -129,13 +129,13 @@ function showgenre(genre) {
         document.querySelector(".eventlistener1").addEventListener("click", seemodal);
 
         function seemodal(myData) {
-            const genremodal = document.querySelector(".modal-background");
+            const genremodal = document.querySelector(".modal-content");
 
             //...
             genremodal.classList.remove("hide");
         }
 
-    const genremodal = document.querySelector(".modal-content");
+    const genremodal = document.querySelector(".modal-background");
     genremodal.addEventListener("click", () => {
         genremodal.classList.add("hide");
     });
