@@ -1,6 +1,7 @@
 :root {
     --background-color: #DFF2FD;
     --secondary-color: #9CD4D8;
+    --third-color: #86a8e7;
     --main-font: 'Avenir Next';
     --main-font-size: 24px;
     --secondary-font-size: 16px;
@@ -280,4 +281,41 @@ opens {
 .eventsTitle {
     grid-area: title;
     text-align: center;
+}
+
+footer {
+    background-color: var(--third-color);
+    box-sizing: border-box;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'footerImg address'
+        '. telephone'
+}
+
+.footerMusikcafeen {
+    grid-area: footerImg;
+}
+
+.address {
+    grid-area: address;
+}
+
+.telephone {
+    grid-area: telephone;
+}
+
+.footerFlex {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: none;
+    margin: none;
+}
+
+.footerImgFlex {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 }

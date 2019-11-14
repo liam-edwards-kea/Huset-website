@@ -66,7 +66,7 @@ function getSingleBand() {
 
     function showMusic(music) {
         //console.log(music)
-        document.querySelector("article h1").textContent = post.title.rendered
+        document.querySelector(".subArticle h1").textContent = music.title.rendered
     }
 }
 
@@ -121,7 +121,7 @@ function handlemodalData(myData) {
 function showgenre(genre) {
     const modal = document.querySelector(".modal-content").content;
 
-    if (genre.count > 0 && genre.parent === 29) {
+    if (genre.count > 0 && genre.parent === 29); {
 
         const modalContent = document.querySelector(".modal-content");
         modalContent.innerHTML += `<a class="genrename" href = Genre.html?id=${genre.id}><h3>${genre.name}</h3></a>`;}
