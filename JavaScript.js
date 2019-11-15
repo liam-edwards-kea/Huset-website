@@ -68,11 +68,6 @@ function getSingleBand() {
         //console.log(music)
         document.querySelector(".subArticle h1").textContent = music.title.rendered;
         document.querySelector(".subArticle h2").innerHTML = music.content.rendered;
-        const imgPath = post.poster.guid;
-        const img = postCopy.querySelector(".subArticle .cover");
-        img.setAttribute("src", imgPath)
-        img.setAttribute("alt", "Poster of the movie " + post.title.rendered);
-
 
     }
 }
