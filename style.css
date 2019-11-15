@@ -46,6 +46,18 @@ p4 {
     font-size: 14px;
 }
 
+a {
+    font-family: var(--main-font);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    transform: scale(1.06);
+}
+
 nav {
     grid-area: nav;
     display: flex;
@@ -85,7 +97,8 @@ li:hover {
         '. line .'
         '. musikWrapper .'
         '. title .'
-        'sort_by search .'
+        '. search .'
+        '. sort_by .'
         '. nav .'
 }
 
@@ -165,6 +178,20 @@ li:hover {
 }
 
 article {
+    width: 100vw;
+    display: grid;
+    grid-row-gap: var(--margin);
+    grid-column-gap: var(--margin);
+    grid-template-columns: 1fr 12fr 1fr;
+    grid-template-areas:
+        '. header .'
+        '. coverImg .'
+        '. eventInfo .'
+        'footer footer footer'
+}
+/* SUB PAGE GRID */
+
+.subArticle {
     width: 100vw;
     display: grid;
     grid-row-gap: var(--margin);
@@ -265,7 +292,8 @@ opens {
     grid-area: sort_by;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+
 }
 
 .eventlistener1 {
@@ -283,7 +311,7 @@ opens {
 }
 
 footer {
-    background-color: var(--third-color);
+    background-color: #C8C8C8;
     box-sizing: border-box;
     padding: 1rem;
     display: grid;
@@ -316,4 +344,28 @@ footer {
     justify-content: center;
     align-items: baseline;
     align-items: center;
+}
+
+/*.modal-background {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}*/
+
+.modal-content {
+    background-image: linear-gradient(to bottom right, #9CD4D8, #86a8e7);
+    border-radius: 12px;
+    border: 1px solid #000;
+    margin: 1em;
+    padding: 2em;
+    width: 50vw;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

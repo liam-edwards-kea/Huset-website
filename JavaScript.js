@@ -14,26 +14,25 @@ function init() {
         //console.log("NOT searching")
         getFrontpageData();
     }
-    getNavigation()
 }
 
-function getNavigation() {
-    fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/genre?_embed")
-        .then(res => res.json())
-        .then(data => {
-            //console.log(data)
-            data.forEach(addLink)
-        })
-}
-
-function addLink(oneItem) {
-    console.log(oneItem.name)
-    //document.querySelector("nav").innerHTML += oneItem.name
-    const link = document.createElement("a");
-    link.textContent = oneItem.name;
-    document.querySelector("nav").appendChild(link);
-
-}
+//function getNavigation() {
+//    fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/genre?_embed")
+//        .then(res => res.json())
+//        .then(data => {
+//            //console.log(data)
+//            data.forEach(addLink)
+//        })
+//}
+//
+//function addLink(oneItem) {
+//    console.log(oneItem.name)
+//    //document.querySelector("nav").innerHTML += oneItem.name
+//    const link = document.createElement("a");
+//    link.textContent = oneItem.name;
+//    document.querySelector(".modal-content").appendChild(link);
+//
+//}
 
 function getSearchData() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -48,10 +47,12 @@ function getSearchData() {
 function getFrontpageData() {
     //console.log("getFrontpageData")
 
-    fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/music?_embed")
+    fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/music?_embed&per_page=100")
         .then(res => res.json())
         .then(handleData)
 }
+
+
 
 function getSingleBand() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -59,7 +60,7 @@ function getSingleBand() {
     //console.log(id)
 
 
-    fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/music/" + id)
+    fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/music/" + id + "?per_page=100&_embed")
         .then(res => res.json())
         .then(showMusic)
 
@@ -68,6 +69,22 @@ function getSingleBand() {
         //console.log(music)
         document.querySelector(".subArticle h1").textContent = music.title.rendered;
         document.querySelector(".subArticle h2").innerHTML = music.content.rendered;
+        const imgPath = music.poster.guid;
+        const img = document.querySelector("img.cover");
+        img.setAttribute("src", imgPath)
+        img.setAttribute("alt", "Poster of the movie " + music.title.rendered);
+
+        var url_string = (window.location.href).toLowerCase();
+        var url = new URL(url_string);
+        var id = url.searchParams.get("id");
+        //	console.log(id);
+        function appendIngenre() {
+            post.genre.forEach(a => {
+                if (parseInt(a) === parseInt(id))
+                    document.querySelector("#genre").appendChild(postCopy);
+            })
+        }
+        appendIngenre()
 
     }
 }
@@ -104,6 +121,7 @@ function showPost(post) {
     //p4.innerHTML = post.door_opens
     //Append it
     document.querySelector("#music").appendChild(postCopy)
+
 }
 
 //MODAL JS
@@ -111,7 +129,7 @@ function showPost(post) {
 window.addEventListener("DOMContentLoaded", seegenre);
 
 function seegenre() {
-    fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/genre?_embed")
+    fetch("http://iesdesigner.eu/wordpress/wp-json/wp/v2/genre?_embed&per_page=100")
         .then(res => res.json())
         .then(handlemodalData)
 }
@@ -123,10 +141,10 @@ function handlemodalData(myData) {
 function showgenre(genre) {
     const modal = document.querySelector(".modal-content").content;
 
-    if (genre.count > 0 && genre.parent === 29); {
-
+    if (genre.count > 0 && genre.parent === 29) {
+        console.log(genre.parent);
         const modalContent = document.querySelector(".modal-content");
-        modalContent.innerHTML += `<a class="genrename" href = Genre.html?id=${genre.id}><h3>${genre.name}</h3></a>`;
+        modalContent.innerHTML += `<a class="genrename" href = genre.html?id=${genre.id}><h3>${genre.name}</h3></a>`;
     }
 
     document.querySelector(".eventlistener1").addEventListener("click", seemodal);
