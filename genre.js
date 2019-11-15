@@ -34,9 +34,9 @@
      //p4.innerHTML = post.door_opens
      //Append it
 
-     var url_string = (window.location.href).toLowerCase();
-     var url = new URL(url_string);
-     var id = url.searchParams.get("id");
+     const url_string = (window.location.href).toLowerCase();
+     const url = new URL(url_string);
+     const id = url.searchParams.get("id");
      console.log(id);
 
      function appendIngenre() {
