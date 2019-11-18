@@ -62,8 +62,8 @@ nav {
     grid-area: nav;
     display: flex;
     flex-direction: column;
-    align-content: space-around;
-    align-content: center;
+    align-items: space-around;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
@@ -124,7 +124,7 @@ li:hover {
     border-bottom: 1px solid #000;
     border-top: 1px solid #000;
     top: 0;
-    width: 25vw;
+    width: 20vw;
 }
 
 .fancy span:before {
@@ -189,6 +189,7 @@ article {
         '. eventInfo .'
         'footer footer footer'
 }
+
 /* SUB PAGE GRID */
 
 .subArticle {
@@ -314,6 +315,7 @@ opens {
 footer {
     background-color: #C8C8C8;
     box-sizing: border-box;
+    width: 100%;
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -347,16 +349,6 @@ footer {
     align-items: center;
 }
 
-/*.modal-background {
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-}*/
-
 .modal-content {
     background-image: linear-gradient(to bottom right, #9CD4D8, #86a8e7);
     border-radius: 12px;
@@ -371,58 +363,7 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-.searchBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform:  translate(-50%,50%);
-    background: #2f3640;
-    height: 40px;
-    border-radius: 40px;
-    padding: 10px;
-
-}
-
-.searchBox:hover > .searchInput {
-    width: 240px;
-    padding: 0 6px;
-}
-
-.searchBox:hover > .searchButton {
-  background: white;
-  color : #2f3640;
-}
-
-.searchButton {
-    color: white;
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #2f3640;
+.husetFlex {
     display: flex;
     justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-}
-
-.searchInput {
-    border:none;
-    background: none;
-    outline:none;
-    float:left;
-    padding: 0;
-    color: white;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
-
-}
-
-@media screen and (max-width: 620px) {
-.searchBox:hover > .searchInput {
-    width: 150px;
-    padding: 0 6px;
-}
 }
